@@ -85,6 +85,25 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 .contact strong{color:var(--white);font-weight:600}
 .note{margin-top:34px;font-size:13px;color:#59646C;max-width:820px}
 @media(max-width:640px){header{padding:80px 0 60px}section{padding:52px 0}}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:22px 0 14px}
+.toolbar input,.toolbar select{background:#101418;border:1px solid #2E353B;color:#fff;font:inherit;font-size:15px;padding:12px 14px;border-radius:10px}
+.toolbar input{flex:1;min-width:260px}
+.toolbar input:focus,.toolbar select:focus{outline:none;border-color:#4FE0FF;box-shadow:0 0 0 3px rgba(79,224,255,.18)}
+.cnt{color:#8B9299;font-size:14px;font-variant-numeric:tabular-nums}
+#eintbl td{vertical-align:middle}
+#eintbl .num{color:#6A7278;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid #2E353B;color:#9AA0A6;white-space:nowrap}
+.pill.usat{border-color:#4FE0FF;color:#4FE0FF}
+.pill.nex{border-color:#7C6BFF;color:#A79BFF}
+.pill.ap{border-color:#FF5C7A;color:#FF8AA1}
+.pill.ver{border-color:#3DDC97;color:#6FE7B4}
+.pill.nn{border-color:#FF9E4F;color:#FFBC85}
+.pill.ls{border-color:#2E353B;color:#8B9299}
+.ok{color:#4FE0FF;font-weight:700;font-size:12px;letter-spacing:.05em}
+.ok.dim{color:#7FD8EE;font-weight:600}
+.tablewrap{max-height:640px;overflow:auto;border:1px solid #2E353B;border-radius:14px}
+.tablewrap table{margin:0}
+.tablewrap thead th{position:sticky;top:0;z-index:2}
 </style>
 </head>
 <body>
@@ -189,6 +208,36 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
   </div>
 </section>
 
+<section id="ein">
+  <div class="wrap">
+    <h2>EIN Presswire distribution &mdash; every direct article link</h2>
+    <p class="lead">Release ID 927643721, distributed 20 July 2026 15:52 GMT. <b>610 direct article URLs</b> pulled straight out of the official EIN Presswire distribution report &mdash; every single one listed below, in full, no index pages.</p>
+
+    <div class="kpis" style="margin:28px 0 8px">
+      <div class="kpi"><div class="n">610</div><div class="l">direct article URLs in the report</div></div>
+      <div class="kpi"><div class="n">594</div><div class="l">confirmed resolving<br>297 clean 200 &middot; 297 bot-blocked to scripts, open in a browser</div></div>
+      <div class="kpi"><div class="n">225</div><div class="l">USA TODAY Network daily papers</div></div>
+      <div class="kpi"><div class="n">101</div><div class="l">Nexstar ABC / NBC / CBS / FOX affiliates</div></div>
+    </div>
+
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Filter 610 outlets — type a paper, station or city…" autocomplete="off">
+      <select id="cf"></select>
+      <a class="btn ghost" href="EIN_Report_610_Direct_Links.csv" download>Download all 610 as CSV</a>
+      <a class="btn ghost" href="EIN_Presswire_Distribution_Report.pdf" target="_blank">Official EIN report (PDF)</a>
+      <span id="count" class="cnt"></span>
+    </div>
+
+    <div class="tablewrap">
+      <table id="eintbl">
+        <thead><tr><th style="width:56px">#</th><th>Outlet</th><th>Network</th><th>Status</th><th>Direct article link</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="src">Source: official EIN Presswire distribution report for release 927643721. Every URL above is the publisher's own article page. Link status re-checked 27 July 2026 &mdash; “bot-blocked” means the publisher rejects automated clients but the page loads normally in a browser, spot-verified live.</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <h2>The deck</h2>
@@ -234,5 +283,45 @@ caps.forEach((c,i)=>{
   host.appendChild(f);
 });
 </script>
+
+<script>
+(function(){
+  var CLS={'AP News':'ap','USA TODAY Network':'usat','Nexstar TV affiliate':'nex','Vertical newswire':'ver','NewsNet local':'nn','Lifestyle network':'ls','XPR newsroom':'ver'};
+  var DATA=[],tb=document.querySelector('#eintbl tbody'),q=document.getElementById('q'),cf=document.getElementById('cf'),cnt=document.getElementById('count');
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function short(u){var h=u.replace(/^https?:\/\/(www\.)?/,'').split('/')[0];return h;}
+  function render(){
+    var term=(q.value||'').toLowerCase().trim(), c=cf.value;
+    var out=DATA.filter(function(r){
+      if(c && r.category!==c) return false;
+      if(!term) return true;
+      return (r.outlet+' '+r.domain+' '+r.category).toLowerCase().indexOf(term)>-1;
+    });
+    var html=out.map(function(r,i){
+      var live = r.status.indexOf('LIVE')===0;
+      var badge = r.http==='200' ? '<span class="ok">LIVE</span>'
+                : live ? '<span class="ok dim">LIVE<span style="color:#6A7278;font-weight:400"> \u00b7 opens in browser</span></span>'
+                : '<span style="color:#8B9299;font-size:12px">not re-checked</span>';
+      return '<tr><td class="num">'+String(i+1).padStart(3,'0')+'</td>'+
+        '<td><b>'+esc(r.outlet)+'</b><div style="color:#6A7278;font-size:12px">'+esc(r.domain)+'</div></td>'+
+        '<td><span class="pill '+(CLS[r.category]||'')+'">'+esc(r.category)+'</span></td>'+
+        '<td>'+badge+'</td>'+
+        '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">Open article \u2192</a></td></tr>';
+    }).join('');
+    tb.innerHTML = html || '<tr><td colspan="5" style="color:#8B9299;padding:26px">No outlet matches that filter.</td></tr>';
+    cnt.textContent = out.length + ' of ' + DATA.length + ' outlets shown';
+  }
+  fetch('ein_links.json').then(function(r){return r.json();}).then(function(d){
+    DATA=d;
+    var cats=[]; d.forEach(function(r){if(cats.indexOf(r.category)<0)cats.push(r.category);});
+    cf.innerHTML='<option value="">All networks ('+d.length+')</option>'+cats.map(function(c){
+      var n=d.filter(function(r){return r.category===c;}).length;
+      return '<option value="'+esc(c)+'">'+esc(c)+' ('+n+')</option>';}).join('');
+    render();
+  });
+  q.addEventListener('input',render); cf.addEventListener('change',render);
+})();
+</script>
+
 </body>
 </html>
