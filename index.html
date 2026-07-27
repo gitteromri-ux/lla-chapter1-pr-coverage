@@ -104,6 +104,19 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 .tablewrap{max-height:640px;overflow:auto;border:1px solid #2E353B;border-radius:14px}
 .tablewrap table{margin:0}
 .tablewrap thead th{position:sticky;top:0;z-index:2}
+
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:30px}
+figure.mock{border:1px solid var(--line);background:var(--panel);overflow:hidden}
+figure.mock img{display:block;width:100%;height:auto}
+figure.mock figcaption{padding:18px 20px 20px;border-top:1px solid var(--line);display:block}
+figure.mock .tier{display:block;font-family:'General Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.16em;color:var(--neon);text-transform:uppercase;margin-bottom:8px}
+figure.mock b{display:block;font-family:'General Sans',sans-serif;font-size:19px;color:#fff;margin-bottom:8px}
+figure.mock figcaption a{font-size:14px;font-weight:600}
+.logowall{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.lchip{background:#fff;border-radius:8px;height:82px;display:flex;align-items:center;justify-content:center;padding:12px 18px}
+.lchip:hover{box-shadow:0 0 0 2px var(--neon)}
+.lchip img{max-width:100%;max-height:46px;width:auto;height:auto;display:block}
 </style>
 </head>
 <body>
@@ -123,25 +136,26 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 
 <div class="wrap">
   <div class="stats">
-    <div class="stat"><b>9</b><span>direct article URLs verified live</span></div>
-    <div class="stat"><b>4</b><span>national-tier outlets<br>AP News ×2, USA TODAY ×2</span></div>
-    <div class="stat"><b>499</b><span>total syndicated links in the Round 1 bundle</span></div>
-    <div class="stat"><b>33</b><span>ABC / NBC / CBS affiliate domains carrying the release</span></div>
+    <div class="stat"><b>1,109</b><span>verified syndicated links<br>610 Round 1 &middot; 499 Round 2</span></div>
+    <div class="stat"><b>3</b><span>AP News articles<br>1 in Round 1, 2 in Round 2</span></div>
+    <div class="stat"><b>225</b><span>USA TODAY Network metro dailies</span></div>
+    <div class="stat"><b>101</b><span>Nexstar ABC / NBC / CBS / FOX affiliates</span></div>
   </div>
 </div>
 
 <section id="coverage">
   <div class="wrap">
     <h2>Tier 1 — National flagship</h2>
-    <p class="lead">Ordered by outlet authority. All four confirmed HTTP 200.</p>
+    <p class="lead">Ordered by outlet authority. Three separate AP News articles across both rounds. All confirmed HTTP 200.</p>
     <div class="tw">
       <table>
         <thead><tr><th>#</th><th>Outlet</th><th>Release</th><th>Published</th><th>Status</th><th>Direct link</th></tr></thead>
         <tbody>
           <tr><td class="num">01</td><td class="outlet">AP News</td><td>Julie Gibson Clark joins LLA faculty</td><td>23 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://apnews.com/press-release/marketersmedia/press-release-a8ed3ee45cf963d309db5995e4de2ced" target="_blank" rel="noopener">apnews.com →</a></td></tr>
           <tr><td class="num">02</td><td class="outlet">AP News</td><td>eTeacher Group launches Longevity Life Academy</td><td>22 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://apnews.com/press-release/marketersmedia/press-release-d48f281f6c1f65d645e37a4bc3f5a222" target="_blank" rel="noopener">apnews.com →</a></td></tr>
-          <tr><td class="num">03</td><td class="outlet">IndyStar<small>USA TODAY Network</small></td><td>eTeacher Group launches Longevity Life Academy</td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">indystar.com →</a></td></tr>
-          <tr><td class="num">04</td><td class="outlet">Cincinnati Enquirer<small>USA TODAY Network</small></td><td>eTeacher Group launches Longevity Life Academy</td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">cincinnati.com →</a></td></tr>
+          <tr><td class="num">03</td><td class="outlet">AP News</td><td>eTeacher Group launches Longevity Life Academy <small>Round 1 &middot; EIN Presswire</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener">apnews.com →</a></td></tr>
+          <tr><td class="num">04</td><td class="outlet">IndyStar<small>USA TODAY Network</small></td><td>eTeacher Group launches Longevity Life Academy</td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">indystar.com →</a></td></tr>
+          <tr><td class="num">05</td><td class="outlet">Cincinnati Enquirer<small>USA TODAY Network</small></td><td>eTeacher Group launches Longevity Life Academy</td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">cincinnati.com →</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -149,9 +163,162 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
   </div>
 </section>
 
+
+<section id="mockups">
+  <div class="wrap">
+    <h2>The pages themselves</h2>
+    <p class="lead">Full-page captures of the published articles, taken from the live outlet sites. Click any one to open the real page.</p>
+    <div class="mocks">
+        <figure class="mock">
+          <a href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener"><img loading="lazy" src="mockups/apnews_com.jpg" alt="AP News article page"></a>
+          <figcaption><span class="tier">TIER 1 · Round 1 · EIN Presswire</span><b>AP News</b><a href="https://apnews.com/press-release/ein-presswire-newsmatics/press-release-df2283f31104321eae816839632a3c48" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://apnews.com/press-release/marketersmedia/press-release-a8ed3ee45cf963d309db5995e4de2ced" target="_blank" rel="noopener"><img loading="lazy" src="mockups/r2_ap_julie.jpg" alt="AP News article page"></a>
+          <figcaption><span class="tier">TIER 1 · Round 2 · MarketersMEDIA</span><b>AP News</b><a href="https://apnews.com/press-release/marketersmedia/press-release-a8ed3ee45cf963d309db5995e4de2ced" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://apnews.com/press-release/marketersmedia/press-release-d48f281f6c1f65d645e37a4bc3f5a222" target="_blank" rel="noopener"><img loading="lazy" src="mockups/r2_ap_launch.jpg" alt="AP News article page"></a>
+          <figcaption><span class="tier">TIER 1 · Round 2 · MarketersMEDIA</span><b>AP News</b><a href="https://apnews.com/press-release/marketersmedia/press-release-d48f281f6c1f65d645e37a4bc3f5a222" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.detroitnews.com/press-release/story/147475/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/detroitnews_com.jpg" alt="The Detroit News article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Detroit News</b><a href="https://www.detroitnews.com/press-release/story/147475/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.freep.com/press-release/story/219533/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/freep_com.jpg" alt="Detroit Free Press article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>Detroit Free Press</b><a href="https://www.freep.com/press-release/story/219533/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.azcentral.com/press-release/story/98960/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/azcentral_com.jpg" alt="The Arizona Republic article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Arizona Republic</b><a href="https://www.azcentral.com/press-release/story/98960/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.jsonline.com/press-release/story/216241/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/jsonline_com.jpg" alt="Milwaukee Journal Sentinel article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>Milwaukee Journal Sentinel</b><a href="https://www.jsonline.com/press-release/story/216241/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.tennessean.com/press-release/story/209293/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/tennessean_com.jpg" alt="The Tennessean article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Tennessean</b><a href="https://www.tennessean.com/press-release/story/209293/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.courier-journal.com/press-release/story/203219/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/courier-journal_com.jpg" alt="The Courier-Journal article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Courier-Journal</b><a href="https://www.courier-journal.com/press-release/story/203219/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.oklahoman.com/press-release/story/203932/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/oklahoman_com.jpg" alt="The Oklahoman article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Oklahoman</b><a href="https://www.oklahoman.com/press-release/story/203932/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.dispatch.com/press-release/story/214783/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/dispatch_com.jpg" alt="The Columbus Dispatch article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Columbus Dispatch</b><a href="https://www.dispatch.com/press-release/story/214783/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/indystar_com.jpg" alt="The Indianapolis Star article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Indianapolis Star</b><a href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/cincinnati_com.jpg" alt="Cincinnati Enquirer article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>Cincinnati Enquirer</b><a href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.desmoinesregister.com/press-release/story/100563/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/desmoinesregister_com.jpg" alt="Des Moines Register article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>Des Moines Register</b><a href="https://www.desmoinesregister.com/press-release/story/100563/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.palmbeachpost.com/press-release/story/211713/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/palmbeachpost_com.jpg" alt="The Palm Beach Post article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Palm Beach Post</b><a href="https://www.palmbeachpost.com/press-release/story/211713/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://www.commercialappeal.com/press-release/story/132377/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener"><img loading="lazy" src="mockups/commercialappeal_com.jpg" alt="The Commercial Appeal article page"></a>
+          <figcaption><span class="tier">TIER 2 · Round 1 · USA TODAY Network</span><b>The Commercial Appeal</b><a href="https://www.commercialappeal.com/press-release/story/132377/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://natlawreview.com/press-releases/eteacher-group-launches-longevity-life-academy-teach-longevity-protocol" target="_blank" rel="noopener"><img loading="lazy" src="mockups/natlawreview_com.jpg" alt="The National Law Review article page"></a>
+          <figcaption><span class="tier">TIER 4 · Round 1 · EIN Presswire</span><b>The National Law Review</b><a href="https://natlawreview.com/press-releases/eteacher-group-launches-longevity-life-academy-teach-longevity-protocol" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://markets.financialcontent.com/streetinsider/news/article/marketersmedia-2026-7-23-julie-gibson-clark-who-out-aged-bryan-johnson-at-the-rejuvenation-olympics-joins-eteachers-longevity-life-academy-faculty" target="_blank" rel="noopener"><img loading="lazy" src="mockups/r2_financialcontent.jpg" alt="FinancialContent article page"></a>
+          <figcaption><span class="tier">TIER 4 · Round 2 · MarketersMEDIA</span><b>FinancialContent</b><a href="https://markets.financialcontent.com/streetinsider/news/article/marketersmedia-2026-7-23-julie-gibson-clark-who-out-aged-bryan-johnson-at-the-rejuvenation-olympics-joins-eteachers-longevity-life-academy-faculty" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+        <figure class="mock">
+          <a href="https://news.marketersmedia.com/julie-gibson-clark-who-out-aged-bryan-johnson-at-the-rejuvenation-olympics-joins-eteachers-longevity-life-academy-faculty/89198680" target="_blank" rel="noopener"><img loading="lazy" src="mockups/r2_marketersmedia.jpg" alt="MarketersMEDIA Newsroom article page"></a>
+          <figcaption><span class="tier">TIER 4 · Round 2 · MarketersMEDIA</span><b>MarketersMEDIA Newsroom</b><a href="https://news.marketersmedia.com/julie-gibson-clark-who-out-aged-bryan-johnson-at-the-rejuvenation-olympics-joins-eteachers-longevity-life-academy-faculty/89198680" target="_blank" rel="noopener">Open the article →</a></figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section id="usat">
+  <div class="wrap">
+    <h2>Tier 2 &mdash; USA TODAY Network</h2>
+    <p class="lead">225 owned metro daily newspaper sites carried the release. These are the flagship city titles.</p>
+    <div class="logowall">
+        <a class="lchip" href="https://www.detroitnews.com/press-release/story/147475/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Detroit News"><img loading="lazy" src="logos/detroitnews_com.png" alt="The Detroit News"></a>
+        <a class="lchip" href="https://www.freep.com/press-release/story/219533/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="Detroit Free Press"><img loading="lazy" src="logos/freep_com.png" alt="Detroit Free Press"></a>
+        <a class="lchip" href="https://www.azcentral.com/press-release/story/98960/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Arizona Republic"><img loading="lazy" src="logos/azcentral_com.png" alt="The Arizona Republic"></a>
+        <a class="lchip" href="https://www.jsonline.com/press-release/story/216241/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="Milwaukee Journal Sentinel"><img loading="lazy" src="logos/jsonline_com.png" alt="Milwaukee Journal Sentinel"></a>
+        <a class="lchip" href="https://www.tennessean.com/press-release/story/209293/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Tennessean"><img loading="lazy" src="logos/tennessean_com.png" alt="The Tennessean"></a>
+        <a class="lchip" href="https://www.courier-journal.com/press-release/story/203219/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Courier-Journal"><img loading="lazy" src="logos/courier-journal_com.png" alt="The Courier-Journal"></a>
+        <a class="lchip" href="https://www.oklahoman.com/press-release/story/203932/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Oklahoman"><img loading="lazy" src="logos/oklahoman_com.png" alt="The Oklahoman"></a>
+        <a class="lchip" href="https://www.dispatch.com/press-release/story/214783/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Columbus Dispatch"><img loading="lazy" src="logos/dispatch_com.png" alt="The Columbus Dispatch"></a>
+        <a class="lchip" href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Indianapolis Star"><img loading="lazy" src="logos/indystar_com.png" alt="The Indianapolis Star"></a>
+        <a class="lchip" href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="Cincinnati Enquirer"><img loading="lazy" src="logos/cincinnati_com.png" alt="Cincinnati Enquirer"></a>
+        <a class="lchip" href="https://www.desmoinesregister.com/press-release/story/100563/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="Des Moines Register"><img loading="lazy" src="logos/desmoinesregister_com.png" alt="Des Moines Register"></a>
+        <a class="lchip" href="https://www.palmbeachpost.com/press-release/story/211713/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Palm Beach Post"><img loading="lazy" src="logos/palmbeachpost_com.png" alt="The Palm Beach Post"></a>
+        <a class="lchip" href="https://www.commercialappeal.com/press-release/story/132377/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener" title="The Commercial Appeal"><img loading="lazy" src="logos/commercialappeal_com.png" alt="The Commercial Appeal"></a>
+    </div>
+    <div class="tw" style="margin-top:30px">
+      <table>
+        <thead><tr><th>#</th><th>Outlet</th><th>Published</th><th>Status</th><th>Direct article link</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td class="outlet">The Detroit News<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.detroitnews.com/press-release/story/147475/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">detroitnews.com →</a></td></tr>
+          <tr><td class="num">02</td><td class="outlet">Detroit Free Press<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.freep.com/press-release/story/219533/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">freep.com →</a></td></tr>
+          <tr><td class="num">03</td><td class="outlet">The Arizona Republic<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.azcentral.com/press-release/story/98960/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">azcentral.com →</a></td></tr>
+          <tr><td class="num">04</td><td class="outlet">Milwaukee Journal Sentinel<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.jsonline.com/press-release/story/216241/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">jsonline.com →</a></td></tr>
+          <tr><td class="num">05</td><td class="outlet">The Tennessean<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.tennessean.com/press-release/story/209293/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">tennessean.com →</a></td></tr>
+          <tr><td class="num">06</td><td class="outlet">The Courier-Journal<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.courier-journal.com/press-release/story/203219/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">courier-journal.com →</a></td></tr>
+          <tr><td class="num">07</td><td class="outlet">The Oklahoman<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.oklahoman.com/press-release/story/203932/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">oklahoman.com →</a></td></tr>
+          <tr><td class="num">08</td><td class="outlet">The Columbus Dispatch<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.dispatch.com/press-release/story/214783/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">dispatch.com →</a></td></tr>
+          <tr><td class="num">09</td><td class="outlet">The Indianapolis Star<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.indystar.com/press-release/story/98580/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">indystar.com →</a></td></tr>
+          <tr><td class="num">10</td><td class="outlet">Cincinnati Enquirer<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.cincinnati.com/press-release/story/98336/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">cincinnati.com →</a></td></tr>
+          <tr><td class="num">11</td><td class="outlet">Des Moines Register<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.desmoinesregister.com/press-release/story/100563/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">desmoinesregister.com →</a></td></tr>
+          <tr><td class="num">12</td><td class="outlet">The Palm Beach Post<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.palmbeachpost.com/press-release/story/211713/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">palmbeachpost.com →</a></td></tr>
+          <tr><td class="num">13</td><td class="outlet">The Commercial Appeal<small>USA TODAY Network</small></td><td>20 Jul 2026</td><td><span class="live">LIVE</span></td><td><a href="https://www.commercialappeal.com/press-release/story/132377/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">commercialappeal.com →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Mastheads above are captured from the published articles themselves. All 225 USA TODAY Network URLs are listed in the full index below.</p>
+  </div>
+</section>
+
+<section id="broadcast">
+  <div class="wrap">
+    <h2>Tier 3 &mdash; Broadcast</h2>
+    <p class="lead">101 Nexstar television affiliate news sites and 35 NewsNet local sites carried the release. Named big-market examples below; the full 136 are in the index.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Station</th><th>Market</th><th>Direct article link</th></tr></thead>
+        <tbody>
+          <tr><td class="outlet">WGN 9</td><td>Chicago</td><td><a href="https://wgntv.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">wgntv.com →</a></td></tr>
+          <tr><td class="outlet">KRON 4</td><td>San Francisco</td><td><a href="https://www.kron4.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">kron4.com →</a></td></tr>
+          <tr><td class="outlet">FOX 2 (KTVI)</td><td>St. Louis</td><td><a href="https://fox2now.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">fox2now.com →</a></td></tr>
+          <tr><td class="outlet">FOX 31 (KDVR)</td><td>Denver</td><td><a href="https://kdvr.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">kdvr.com →</a></td></tr>
+          <tr><td class="outlet">KXAN</td><td>Austin</td><td><a href="https://www.kxan.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">kxan.com →</a></td></tr>
+          <tr><td class="outlet">WREG</td><td>Memphis</td><td><a href="https://wreg.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">wreg.com →</a></td></tr>
+          <tr><td class="outlet">FOX 8 (WJW)</td><td>Cleveland</td><td><a href="https://fox8.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">fox8.com →</a></td></tr>
+          <tr><td class="outlet">KOIN 6</td><td>Portland</td><td><a href="https://www.koin.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">koin.com →</a></td></tr>
+          <tr><td class="outlet">WAVY 10</td><td>Norfolk</td><td><a href="https://www.wavy.com/business/press-releases/ein-presswire/927643721/eteacher-group-launches-longevity-life-academy-to-teach-the-longevity-protocol-the-wealthy-pay-millions-for/" target="_blank" rel="noopener">wavy.com →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Nexstar sites reject automated clients from datacenter IP ranges, so these are presented as verified links rather than page captures.</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
-    <h2>Tier 2 — Financial &amp; syndication</h2>
+    <h2>Tier 4 — Financial &amp; syndication</h2>
     <p class="lead">Trading-desk and market-data surfaces carrying the Julie Gibson Clark release.</p>
     <div class="tw">
       <table>
@@ -171,7 +338,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 
 <section>
   <div class="wrap">
-    <h2>Syndication footprint</h2>
+    <h2>Round 2 syndication footprint</h2>
     <p class="lead">What the 499-link Round 1 bundle actually contains, counted line by line.</p>
     <div class="tw">
       <table>
@@ -241,7 +408,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 <section>
   <div class="wrap">
     <h2>The deck</h2>
-    <p class="lead">All thirteen slides, with live screen captures of every placement.</p>
+    <p class="lead">All 30 slides, with full-page captures of every flagship placement.</p>
     <div class="slides" id="deck"></div>
   </div>
 </section>
@@ -259,21 +426,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 90px}
 </footer>
 
 <script>
-const caps = [
- "Cover — Chapter 1, Public Relations",
- "At a glance — verified counts",
- "Tier 1 — national flagship placements",
- "Tier 2 — financial and syndication placements",
- "AP News — live page capture",
- "IndyStar, USA TODAY Network — live page capture",
- "Cincinnati Enquirer, USA TODAY Network — live page capture",
- "StreetInsider — live page capture",
- "MarketersMEDIA Newsroom — live page capture",
- "Barchart — headline card",
- "Syndication footprint of the 499-link bundle",
- "Not live — stated plainly",
- "Close and media contact"
-];
+const caps = ["Cover — Chapter 1, Public Relations", "Coverage at a glance — verified counts", "Tier 1 — AP News", "AP News — Round 1, EIN Presswire", "AP News — Round 2, Julie Gibson Clark", "AP News — Round 2, launch release", "Tier 2 — USA TODAY Network, masthead wall", "The Detroit News — full page capture", "Detroit Free Press — full page capture", "The Arizona Republic — full page capture", "Milwaukee Journal Sentinel — full page capture", "The Tennessean — full page capture", "The Courier-Journal — full page capture", "The Oklahoman — full page capture", "The Columbus Dispatch — full page capture", "The Indianapolis Star — full page capture", "Cincinnati Enquirer — full page capture", "Des Moines Register — full page capture", "The Palm Beach Post — full page capture", "The Commercial Appeal — full page capture", "Tier 3 — Broadcast", "Nexstar affiliates — named big-market stations", "Tier 4 — Round 2 financial wire", "FinancialContent — full page capture", "MarketersMEDIA Newsroom — full page capture", "Round 2 — financial hubs", "The National Law Review — full page capture", "The full Round 1 footprint — 610 publisher URLs", "Not live — stated plainly", "Close and media contact"];
 const host = document.getElementById('deck');
 caps.forEach((c,i)=>{
   const n = String(i+1).padStart(2,'0');
